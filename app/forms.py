@@ -8,3 +8,9 @@ class ProductForm(ModelForm):
     class Meta:
         model = Product
         fields = ["name", "category", "description", "price", "stock"]
+
+    def clean_price(self):
+        price = self.cleaned_data.get("price")
+        if price > 1000:
+            raise ValidationError("Product is too expensive")
+        return price
