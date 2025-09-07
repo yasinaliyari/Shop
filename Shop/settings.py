@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from Shop.local_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,6 +73,11 @@ WSGI_APPLICATION = "Shop.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
+        "NAME": DB_NAME,
+        "PASSWORD": DB_PASS,
+        "HOST": DB_HOST,
+        "USER": DB_USER,
+        "PORT": DB_PORT,
     }
 }
 
