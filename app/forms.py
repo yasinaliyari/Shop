@@ -18,5 +18,5 @@ class ProductForm(ModelForm):
     def clean_description(self):
         description = self.cleaned_data.get("description")
         if len(description) <= 20:
-            raise ValidationError("Product most have a good description")
+            raise ValidationError("Product must have a good description")
         return description
